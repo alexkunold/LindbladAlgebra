@@ -1,6 +1,15 @@
 # LindbladAlgebra
 Mathematica notebooks implementing the algebraic formulation of the Lindblad equation for finite-dimensional open quantum systems.
 
+## Authors
+Leonel Bixano,
+Guillermo López-Alvarez,
+Victor Alberto Cruz-Barriguete,
+Victor Guadalupe Ibarra-Sierra,
+José Luis Cardoso,
+Juan Carlos Sandoval-Santana,
+Alejandro Kunold
+
 ## Abstract
 This repository contains a Mathematica notebook that accompanies the paper The Algebraic Structure of the Lindblad Equation. The notebook illustrates the proposed algebraic formulation through the example of a driven transmon qubit described by the Lindblad master equation.
 
