@@ -16,3 +16,15 @@ This repository contains a Mathematica notebook that accompanies the paper The A
 The example is organized as a step-by-step implementation of the algebraic method. It begins by constructing the Hermitian matrix basis and the associated algebraic objects, followed by the recursive generation of the operators required to represent the Liouville superoperator. The model-dependent quantities are then assembled to obtain the complete Liouville superoperator, which is compared with the one obtained by the conventional direct construction, demonstrating their exact agreement.
 
 The notebook is fully parameterized with respect to the number of qubits, allowing the same implementation to be extended to larger Hilbert spaces. Although some symbolic calculations become computationally demanding as the system size increases, the code provides a general framework that can be readily adapted to study a broad class of finite-dimensional open quantum systems.
+
+## Licence
+
+LindbladAlgebra Mathematica examples accompanying the paper
+
+"The Algebraic Structure of the Lindblad Equation"
+
+Copyright (c) 2026 Alejandro Kunold and collaborators
+
+This notebook is distributed under the MIT License. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the conditions of the MIT License.
+
+A copy of the full license is available in the LICENSE file of this repository.
