@@ -11,11 +11,10 @@ Juan Carlos Sandoval-Santana,
 Alejandro Kunold
 
 ## Abstract
-This repository contains a Mathematica notebook that accompanies the paper The Algebraic Structure of the Lindblad Equation. The notebook illustrates the proposed algebraic formulation through the example of a driven transmon qubit described by the Lindblad master equation.
-
-The example is organized as a step-by-step implementation of the algebraic method. It begins by constructing the Hermitian matrix basis and the associated algebraic objects, followed by the recursive generation of the operators required to represent the Liouville superoperator. The model-dependent quantities are then assembled to obtain the complete Liouville superoperator, which is compared with the one obtained by the conventional direct construction, demonstrating their exact agreement.
-
-The notebook is fully parameterized with respect to the number of qubits, allowing the same implementation to be extended to larger Hilbert spaces. Although some symbolic calculations become computationally demanding as the system size increases, the code provides a general framework that can be readily adapted to study a broad class of finite-dimensional open quantum systems.
+This repository contains a Mathematica notebook accompanying the paper Algebraic Structures of the Lindblad Equation. The notebook illustrates the proposed algebraic formulation through one-, two-, and three-qubit examples that verify the derived relations and compare the algebraic and direct methods. An additional example describes a driven four-level transmon, demonstrating an approximate \(X\) gate and the associated population leakage beyond the computational subspace.
+The examples provide a step-by-step implementation of the algebraic method, beginning with the construction of the Hermitian operator basis and the associated algebraic objects. The model-dependent quantities are then assembled to obtain the Liouville superoperator and the corresponding differential equations. Their agreement with the results obtained using the direct method is explicitly verified.
+The repository also includes the benchmarking notebooks benchmark-timing and benchmark-memory, which compare execution times and memory requirements, respectively, for preprocessing and constructing the Liouville superoperator and the dynamical-map equations. These comparisons assess the implementations and cases tested; they do not establish a general computational advantage over optimized sparse methods.
+The code is parameterized by the number of qubits, allowing systematic extension to larger Hilbert spaces, subject to computational resource limitations. Although some symbolic calculations become demanding as the system size increases, the implementation provides a framework that can be adapted to other finite-dimensional open quantum systems.
 
 ## Licence
 
