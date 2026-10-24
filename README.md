@@ -11,10 +11,11 @@ Juan Carlos Sandoval-Santana,
 Alejandro Kunold
 
 ## Abstract
-This repository contains a Mathematica notebook accompanying the paper Algebraic Structures of the Lindblad Equation. The notebook illustrates the proposed algebraic formulation through one-, two-, and three-qubit examples that verify the derived relations and compare the algebraic and direct methods. An additional example describes a driven four-level transmon, demonstrating an approximate \(X\) gate and the associated population leakage beyond the computational subspace.
-The examples provide a step-by-step implementation of the algebraic method, beginning with the construction of the Hermitian operator basis and the associated algebraic objects. The model-dependent quantities are then assembled to obtain the Liouville superoperator and the corresponding differential equations. Their agreement with the results obtained using the direct method is explicitly verified.
-The repository also includes the benchmarking notebooks benchmark-timing and benchmark-memory, which compare execution times and memory requirements, respectively, for preprocessing and constructing the Liouville superoperator and the dynamical-map equations. These comparisons assess the implementations and cases tested; they do not establish a general computational advantage over optimized sparse methods.
-The code is parameterized by the number of qubits, allowing systematic extension to larger Hilbert spaces, subject to computational resource limitations. Although some symbolic calculations become demanding as the system size increases, the implementation provides a framework that can be adapted to other finite-dimensional open quantum systems.
+This repository contains the Mathematica notebook accompanying the paper Algebraic Structures of the Lindblad Equation. It provides a step-by-step implementation of the algebraic formulation, from the construction of orthonormal Hermitian operator bases and their structure constants to the Liouville superoperator and the differential equations governing the dynamical map.
+
+The notebook contains five worked examples. Examples 1, 3, and 5 verify the main algebraic relations for one-, two-, and three-qubit operator bases. Examples 2 and 4 numerically solve the evolution equations for transmon models, construct the dynamical map, and plot the energy-level populations. An additional application illustrates the implementation of an approximate X gate.
+
+The numerical examples also construct the unnormalized Choi matrix to check Hermiticity preservation, complete positivity, and trace preservation of the computed dynamical maps. Additional tests examine purely dissipative evolution with the Hamiltonian set to zero and unitary evolution with the Kossakowski matrix set to zero. Plots of the density-matrix trace provide a further check of trace preservation during the evolution.
 
 ## Licence
 
