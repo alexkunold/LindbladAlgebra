@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     42246,       1126]
-NotebookOptionsPosition[     41719,       1108]
-NotebookOutlinePosition[     42132,       1125]
-CellTagsIndexPosition[     42089,       1122]
+NotebookDataLength[     46988,       1212]
+NotebookOptionsPosition[     46461,       1194]
+NotebookOutlinePosition[     46874,       1211]
+CellTagsIndexPosition[     46831,       1208]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -76,6 +76,31 @@ Cell[BoxData[{
           RowBox[{"nq", "-", "1"}]}], "}"}]}], "]"}], ";", 
       "\[IndentingNewLine]", "h1"}]}], "\[IndentingNewLine]", "]"}]}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ElementaryBasis", "[", "m_", "]"}], ":=", 
+    RowBox[{"SparseArray", "[", 
+     RowBox[{
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"m", 
+              RowBox[{"(", 
+               RowBox[{"j", "-", "1"}], ")"}]}], "+", "i"}], " ", ",", "i", ",",
+             "j"}], "}"}], "\[Rule]", "1"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "m"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "m"}], "}"}]}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        SuperscriptBox["m", "2"], ",", "m", ",", "m"}], "}"}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"QubitBasis", "[", "nq_", "]"}], ":=", 
@@ -605,6 +630,108 @@ Cell[BoxData[{
     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
+   RowBox[{"LiouvilleStandardKronecker", "[", 
+    RowBox[{
+    "H_", ",", "\[ScriptCapitalI]_", ",", "\[Gamma]1_", ",", "J1_", ",", 
+     "J1t_", ",", "J1s_", ",", "J1T_", ",", "\[Gamma]2_", ",", "J2_", ",", 
+     "J2t_", ",", "J2s_", ",", "J2T_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"\[ImaginaryI]", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"KroneckerProduct", "[", 
+        RowBox[{
+         RowBox[{"Transpose", "[", "H", "]"}], ",", "\[ScriptCapitalI]"}], 
+        "]"}], "-", 
+       RowBox[{"KroneckerProduct", "[", 
+        RowBox[{"\[ScriptCapitalI]", ",", "H"}], "]"}]}], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Flatten", "[", "\[Gamma]1", "]"}], ".", 
+        RowBox[{"KroneckerProduct", "[", 
+         RowBox[{"J1s", ",", "J1"}], "]"}]}], "-", 
+       RowBox[{
+        FractionBox["1", "2"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"KroneckerProduct", "[", 
+           RowBox[{"\[ScriptCapitalI]", ",", 
+            RowBox[{"TensorContract", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Transpose", "[", 
+                RowBox[{
+                 RowBox[{"J1t", ".", 
+                  RowBox[{"Transpose", "[", "J1", "]"}]}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"4", ",", "2", ",", "1", ",", "3"}], "}"}]}], "]"}],
+                ".", "\[Gamma]1"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}]}], "]"}], "+", 
+          
+          RowBox[{"KroneckerProduct", "[", 
+           RowBox[{
+            RowBox[{"TensorContract", "[", 
+             RowBox[{
+              RowBox[{"\[Gamma]1", ".", 
+               RowBox[{"Transpose", "[", 
+                RowBox[{
+                 RowBox[{"J1T", ".", 
+                  RowBox[{"Transpose", "[", "J1s", "]"}]}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "2", ",", "4", ",", "3"}], "}"}]}], 
+                "]"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}], ",", 
+            "\[ScriptCapitalI]"}], "]"}]}], ")"}]}], "+", " ", 
+       RowBox[{
+        RowBox[{"Flatten", "[", "\[Gamma]2", "]"}], ".", 
+        RowBox[{"KroneckerProduct", "[", 
+         RowBox[{"J2s", ",", "J2"}], "]"}]}], "-", 
+       RowBox[{
+        FractionBox["1", "2"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"KroneckerProduct", "[", 
+           RowBox[{"\[ScriptCapitalI]", ",", 
+            RowBox[{"TensorContract", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Transpose", "[", 
+                RowBox[{
+                 RowBox[{"J2t", ".", 
+                  RowBox[{"Transpose", "[", "J2", "]"}]}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"4", ",", "2", ",", "1", ",", "3"}], "}"}]}], "]"}],
+                ".", "\[Gamma]2"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}]}], "]"}], "+", 
+          
+          RowBox[{"KroneckerProduct", "[", 
+           RowBox[{
+            RowBox[{"TensorContract", "[", 
+             RowBox[{
+              RowBox[{"\[Gamma]2", ".", 
+               RowBox[{"Transpose", "[", 
+                RowBox[{
+                 RowBox[{"J2T", ".", 
+                  RowBox[{"Transpose", "[", "J2s", "]"}]}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "2", ",", "4", ",", "3"}], "}"}]}], 
+                "]"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}], ",", 
+            "\[ScriptCapitalI]"}], "]"}]}], ")"}]}]}], ")"}]}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"LiouvilleSOFromLamda", "[", 
     RowBox[{"X_", ",", "\[CapitalLambda]_"}], "]"}], ":=", 
    RowBox[{"TensorContract", "[", 
@@ -616,91 +743,6 @@ Cell[BoxData[{
        RowBox[{"1", ",", "2"}], "}"}], "}"}]}], "]"}]}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{"LiouvilleStandardKronecker", "[", 
-    RowBox[{
-    "H_", ",", "\[Gamma]1_", ",", "J1_", ",", "J1s_", ",", "J1T_", ",", 
-     "\[Gamma]2_", ",", "J2_", ",", "J2s_", ",", "J2T_"}], "]"}], ":=", 
-   RowBox[{
-    RowBox[{"\[ImaginaryI]", 
-     RowBox[{"(", 
-      RowBox[{
-       RowBox[{"KroneckerProduct", "[", 
-        RowBox[{"H", ",", "\[ScriptCapitalI]"}], "]"}], "-", 
-       RowBox[{"KroneckerProduct", "[", 
-        RowBox[{"\[ScriptCapitalI]", ",", 
-         RowBox[{"Transpose", "[", "H", "]"}]}], "]"}]}], ")"}]}], "+", 
-    RowBox[{"2", " ", 
-     RowBox[{
-      RowBox[{"Flatten", "[", "\[Gamma]1", "]"}], ".", 
-      RowBox[{"KroneckerProduct", "[", 
-       RowBox[{"J1s", ",", "J1"}], "]"}]}]}], "-", 
-    RowBox[{"KroneckerProduct", "[", 
-     RowBox[{"\[ScriptCapitalI]", ",", 
-      RowBox[{"TensorContract", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"Transpose", "[", 
-          RowBox[{
-           RowBox[{"J1s", ".", 
-            RowBox[{"Transpose", "[", "J1", "]"}]}], ",", 
-           RowBox[{"{", 
-            RowBox[{"1", ",", "2", ",", "4", ",", "3"}], "}"}]}], "]"}], ".", 
-         "\[Gamma]1"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"{", 
-          RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}]}], "]"}], "-", 
-    RowBox[{"KroneckerProduct", "[", 
-     RowBox[{
-      RowBox[{"TensorContract", "[", 
-       RowBox[{
-        RowBox[{"\[Gamma]1", ".", 
-         RowBox[{"Transpose", "[", 
-          RowBox[{
-           RowBox[{"J1T", ".", 
-            RowBox[{"Transpose", "[", "J1s", "]"}]}], ",", 
-           RowBox[{"{", 
-            RowBox[{"1", ",", "2", ",", "4", ",", "3"}], "}"}]}], "]"}]}], ",", 
-        RowBox[{"{", 
-         RowBox[{"{", 
-          RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}], ",", 
-      "\[ScriptCapitalI]"}], "]"}], "+", 
-    RowBox[{"2", " ", 
-     RowBox[{
-      RowBox[{"Flatten", "[", "\[Gamma]2", "]"}], ".", 
-      RowBox[{"KroneckerProduct", "[", 
-       RowBox[{"J2s", ",", "J2"}], "]"}]}]}], "-", 
-    RowBox[{"KroneckerProduct", "[", 
-     RowBox[{"\[ScriptCapitalI]", ",", 
-      RowBox[{"TensorContract", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"Transpose", "[", 
-          RowBox[{
-           RowBox[{"J2s", ".", 
-            RowBox[{"Transpose", "[", "J2", "]"}]}], ",", 
-           RowBox[{"{", 
-            RowBox[{"1", ",", "2", ",", "4", ",", "3"}], "}"}]}], "]"}], ".", 
-         "\[Gamma]2"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"{", 
-          RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}]}], "]"}], "-", 
-    RowBox[{"KroneckerProduct", "[", 
-     RowBox[{
-      RowBox[{"TensorContract", "[", 
-       RowBox[{
-        RowBox[{"\[Gamma]2", ".", 
-         RowBox[{"Transpose", "[", 
-          RowBox[{
-           RowBox[{"J2T", ".", 
-            RowBox[{"Transpose", "[", "J2s", "]"}]}], ",", 
-           RowBox[{"{", 
-            RowBox[{"1", ",", "2", ",", "4", ",", "3"}], "}"}]}], "]"}]}], ",", 
-        RowBox[{"{", 
-         RowBox[{"{", 
-          RowBox[{"1", ",", "4"}], "}"}], "}"}]}], "]"}], ",", 
-      "\[ScriptCapitalI]"}], "]"}]}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
   RowBox[{"ProjectOperatorOntoBasis", "[", 
    RowBox[{"op_", ",", "h_"}], "]"}], ":=", 
   RowBox[{"TensorContract", "[", 
@@ -710,10 +752,52 @@ Cell[BoxData[{
      RowBox[{"{", 
       RowBox[{"2", ",", "3"}], "}"}], "}"}]}], "]"}]}]}], "Input",
  InitializationCell->True,
- CellChangeTimes->{{4.00150605302199*^9, 4.0015060549964037`*^9}, {
-  4.00151089072059*^9, 4.0015108923257217`*^9}, {4.001528265625119*^9, 
-  4.0015282771879683`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"75d2209b-d760-4e54-aedb-f8827a8cb63b"],
+ CellChangeTimes->{{3.989755767451253*^9, 3.989755800164963*^9}, {
+   3.989755897349675*^9, 3.989756206873404*^9}, {3.9897562914298897`*^9, 
+   3.989756334000476*^9}, {3.989756473950953*^9, 3.989756482245001*^9}, 
+   3.98975655640588*^9, {3.989759912058579*^9, 3.989759922287828*^9}, {
+   3.9897599918516407`*^9, 3.9897600057326202`*^9}, {3.989760591222171*^9, 
+   3.989760759986967*^9}, {3.989760924614896*^9, 3.9897609416796494`*^9}, {
+   3.989761041953459*^9, 3.989761049451425*^9}, {3.9897611536260443`*^9, 
+   3.989761210383462*^9}, {3.989859514298283*^9, 3.989859516627675*^9}, {
+   3.989863212874502*^9, 3.989863312534289*^9}, {3.9898633583451223`*^9, 
+   3.989863437381527*^9}, {3.9898635094161797`*^9, 3.9898636514625463`*^9}, {
+   3.989863739500821*^9, 3.98986374650449*^9}, {3.989864054642816*^9, 
+   3.9898640839690647`*^9}, {3.9900133630599318`*^9, 3.990013373595664*^9}, {
+   3.9900134459860973`*^9, 3.9900134886091557`*^9}, {3.99001359034439*^9, 
+   3.990013694310848*^9}, {3.990013767188695*^9, 3.990013771204513*^9}, {
+   3.990013812075616*^9, 3.99001381563612*^9}, {3.9900874758747873`*^9, 
+   3.990087495154024*^9}, {3.990098999641067*^9, 3.990099145646253*^9}, {
+   3.990099186134368*^9, 3.9900991936300898`*^9}, {3.990194604189101*^9, 
+   3.9901946698143873`*^9}, {3.990194703852981*^9, 3.990194758632378*^9}, {
+   3.990194791707615*^9, 3.990194982690189*^9}, {3.990195139100552*^9, 
+   3.9901951991233*^9}, {3.990195357570765*^9, 3.990195416310688*^9}, {
+   3.9901954626793222`*^9, 3.990195478937768*^9}, {3.990195705020995*^9, 
+   3.990195985929981*^9}, 3.990196154798951*^9, {3.990196216614234*^9, 
+   3.990196247364592*^9}, {3.990270474988126*^9, 3.99027047518745*^9}, {
+   3.990270722472741*^9, 3.990270723583962*^9}, {3.9903576357328*^9, 
+   3.990357646018826*^9}, {3.990357688442005*^9, 3.990357721621848*^9}, {
+   3.9903577532143307`*^9, 3.990357770746806*^9}, {3.990649037155571*^9, 
+   3.990649082734972*^9}, {3.999527098807065*^9, 3.999527105001843*^9}, {
+   3.99952741408812*^9, 3.999527483537991*^9}, 3.999539609372511*^9, {
+   3.999695020252953*^9, 3.999695099620471*^9}, {3.999695396671114*^9, 
+   3.9996954088812857`*^9}, {4.0013383908203697`*^9, 
+   4.0013384375282507`*^9}, {4.0013386158789387`*^9, 4.001338621727478*^9}, {
+   4.001345816694022*^9, 4.0013458566510277`*^9}, {4.00140534544751*^9, 
+   4.0014053496715393`*^9}, {4.001405379864456*^9, 4.001405393952355*^9}, {
+   4.00140548834836*^9, 4.0014054898527308`*^9}, 4.001408239656925*^9, {
+   4.001761525895454*^9, 4.001761527518869*^9}, {4.0017635698110523`*^9, 
+   4.001763599295472*^9}, {4.0017636390028543`*^9, 4.001763641057583*^9}, {
+   4.00176369616153*^9, 4.001763830352076*^9}, {4.001763925589764*^9, 
+   4.001763942084337*^9}, 4.001765148946723*^9, {4.0017657260102243`*^9, 
+   4.0017657314272003`*^9}, {4.0017657642306757`*^9, 
+   4.0017657650245447`*^9}, {4.001766214397277*^9, 4.0017662279876337`*^9}, {
+   4.0017663850767517`*^9, 4.001766440723443*^9}, {4.001768552529408*^9, 
+   4.0017686404877768`*^9}, {4.0017686956147213`*^9, 4.001768725163563*^9}, 
+   4.0017688842289543`*^9, {4.001768998682252*^9, 4.001769024190298*^9}, {
+   4.00176906266932*^9, 4.001769128656975*^9}, {4.0017692202646637`*^9, 
+   4.0017692222563*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"454b483d-20a9-47a8-a85f-a845969ce8f0"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1076,9 +1160,10 @@ Cell[BoxData[{
           RowBox[{"Lsm", "=", 
            RowBox[{"LiouvilleStandardKronecker", "[", 
             RowBox[{
-            "Hi", ",", "\[Gamma]1", ",", "J1", ",", "J1s", ",", "J1T", ",", 
-             "\[Gamma]2", ",", "J2", ",", "J2s", ",", "J2T"}], "]"}]}], ";"}],
-          "]"}]}], ";", "\[IndentingNewLine]", 
+            "Hi", ",", "\[ScriptCapitalI]", ",", "\[Gamma]1", ",", "J1", ",", 
+             "J1t", ",", "J1s", ",", "J1T", ",", "\[Gamma]2", ",", "J2", ",", 
+             "J2t", ",", "J2s", ",", "J2T"}], "]"}]}], ";"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
        RowBox[{"mem7", "=", 
         RowBox[{"ByteCount", "[", "Lsm", "]"}]}], ";", "\[IndentingNewLine]", 
        
@@ -1103,11 +1188,12 @@ Cell[BoxData[{
    4.0015110472811623`*^9, 4.001511153177683*^9}, {4.001511218375194*^9, 
    4.001511219023505*^9}, 4.00151240276546*^9, {4.001518659155162*^9, 
    4.001518908708253*^9}, {4.001520011560309*^9, 4.001520020344677*^9}, {
-   4.0015307546295567`*^9, 4.001530764587202*^9}},
- CellLabel->"In[22]:=",ExpressionUUID->"68ed8d3c-c5d7-436a-ada7-c7c7b531b240"]
+   4.0015307546295567`*^9, 4.001530764587202*^9}, {4.001878021300506*^9, 
+   4.0018780576241207`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"68ed8d3c-c5d7-436a-ada7-c7c7b531b240"]
 },
 WindowSize->{809, 864},
-WindowMargins->{{657, Automatic}, {Automatic, 23}},
+WindowMargins->{{858, Automatic}, {Automatic, 17}},
 LightDark->"Light",
 FrontEndVersion->"14.3 for Mac OS X x86 (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
@@ -1124,9 +1210,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 25538, 695, 3139, "Input",ExpressionUUID->"75d2209b-d760-4e54-aedb-f8827a8cb63b",
+Cell[554, 20, 30166, 779, 3290, "Input",ExpressionUUID->"454b483d-20a9-47a8-a85f-a845969ce8f0",
  InitializationCell->True],
-Cell[26095, 717, 15620, 389, 1548, "Input",ExpressionUUID->"68ed8d3c-c5d7-436a-ada7-c7c7b531b240",
+Cell[30723, 801, 15734, 391, 1548, "Input",ExpressionUUID->"68ed8d3c-c5d7-436a-ada7-c7c7b531b240",
  InitializationCell->True]
 }
 ]
