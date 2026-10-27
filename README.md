@@ -45,7 +45,7 @@ The repository also includes the benchmarking notebooks benchmark-timing and ben
 
 The code is parameterized by the number of qubits, allowing systematic extension to larger Hilbert spaces, subject to computational resource limitations. Although some symbolic calculations become demanding as the system size increases, the implementation provides a framework that can be adapted to other finite-dimensional open quantum systems.
 
-### v3.0
+### v3.0, v3.1
 
 This repository contains a Mathematica notebook accompanying the paper Algebraic Structures of the Lindblad Equation. It provides a step-by-step implementation of the algebraic formulation, beginning with the construction of orthonormal Hermitian operator bases and the associated algebraic objects, followed by the Liouville superoperator and the differential equations for the dynamical-map coefficients. Agreement with the corresponding results obtained using the direct method is explicitly verified.
 
